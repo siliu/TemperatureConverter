@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TemperatureConverter</string>
+    <string name="radio1">Fahrenheit-to-Celsius</string>
+    <string name="radio2">Celsius-to-Fahrenheit</string>
+</resources>
