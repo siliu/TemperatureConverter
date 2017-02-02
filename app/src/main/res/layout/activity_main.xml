@@ -9,49 +9,57 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="#F7BE45"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="buttonClicked"
-        android:text="CONVERT"
+        android:text="@string/buttonName"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:layout_constraintLeft_creator="1" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputLabel" />
 
     <EditText
         android:id="@+id/input"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/layout_border"
+        android:layout_width="215dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#FFADD8E6"
         android:ems="10"
-        android:gravity="center_vertical"
-        android:inputType="numberDecimal"
-        android:singleLine="false"
-        app:layout_constraintLeft_toRightOf="@+id/textView3"
+        android:inputType="numberSigned|numberDecimal"
+        app:layout_constraintLeft_toRightOf="@+id/inputLabel"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratioGroup" />
 
     <TextView
         android:id="@+id/output"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="215dp"
+        android:layout_height="22dp"
+        android:background="#FFADD8E6"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/outputLabel"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/input"
-        app:layout_constraintTop_toBottomOf="@+id/input" />
+        app:layout_constraintRight_toRightOf="@+id/input" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/inputLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:gravity="start"
-        android:text="Input:"
+        android:text="@string/inputLabel"
         android:textAlignment="textStart"
         android:textSize="18sp"
         android:textStyle="normal|bold"
@@ -59,18 +67,15 @@
         app:layout_constraintTop_toBottomOf="@+id/ratioGroup" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/outputLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Output:"
+        android:layout_marginTop="24dp"
+        android:text="@string/outputLabel"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:layout_constraintLeft_creator="1" />
+        app:layout_constraintLeft_toLeftOf="@+id/inputLabel"
+        app:layout_constraintTop_toBottomOf="@+id/inputLabel" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -95,21 +100,21 @@
         android:layout_width="411dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="90dp"
+        app:layout_constraintGuide_begin="100dp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="90dp" />
+        tools:layout_editor_absoluteY="100dp" />
 
 
 
     <RadioGroup
         android:id="@+id/ratioGroup"
-        android:layout_width="330dp"
+        android:layout_width="383dp"
         android:layout_height="24dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:orientation='horizontal'
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -123,7 +128,7 @@
             android:fontFamily="sans-serif"
             android:onClick="radioClicked"
             android:text="@string/radio1"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="40dp" />
 
@@ -133,7 +138,7 @@
             android:layout_height="wrap_content"
             android:onClick="radioClicked"
             android:text="@string/radio2"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="40dp" />
 
@@ -141,13 +146,16 @@
 
     <TextView
         android:id="@+id/history"
-        android:layout_width="375dp"
-        android:layout_height="343dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="370dp"
+        android:layout_height="449dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/layout_border"
+        android:gravity="left"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
