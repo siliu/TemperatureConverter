@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
-        outState.putString("TITLE", "Conversion History");
         outState.putString("HISTORY", history.getText().toString() );
 
         //Call super at last
@@ -57,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         //Call super at first
         super.onRestoreInstanceState(savedInstanceState);
 
-        history.setText(savedInstanceState.getString("TITLE"));
         history.setText(savedInstanceState.getString("HISTORY"));
     }
 
